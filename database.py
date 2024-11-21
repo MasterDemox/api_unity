@@ -2,7 +2,7 @@ import sqlalchemy as sqla
 class Database:
 	def __init(self):
 		self.engine = sqla.create_engine("mysql+pymysql://is61-4:na8xwxpz@192.168.3.111/db")
-	self.connection = self.engine.connect()
+		self.connection = self.engine.connect()
 
 	def get_stats(self):
 		query = sqla.text("SELECT * FROM stats")
