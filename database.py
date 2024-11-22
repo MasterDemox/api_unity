@@ -1,7 +1,9 @@
 import sqlalchemy as sqla
+from flask_sqlalchemy import SQLAlchemy
+
 class Database:
-	def __init(self):
-		self.engine = sqla.create_engine("mysql+pymysql://is61-4:na8xwxpz@192.168.3.111/db")
+	def __init__(self):
+		self.engine = sqla.create_engine("mysql+pymysql://is61-4:na8xwxpz@192.168.3.111/dbr")
 		self.connection = self.engine.connect()
 
 	def get_stats(self):
@@ -17,3 +19,4 @@ class Database:
 		query = query.bindparams(sqla.bindparam("score", score))
 		self.connection.execute(query)
 		self.connection.commit()
+
